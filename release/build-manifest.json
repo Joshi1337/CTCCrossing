@@ -1,0 +1,61 @@
+{
+  "version": "0.3.1",
+  "files": [
+    {
+      "path": "Info.json",
+      "sha256": "087d8791ed185b3614a6ee49f27d9bfb2a1d5e337c11f116fbbb38968f094cf5"
+    },
+    {
+      "path": "Source/BrysonCrossingLamp.csproj",
+      "sha256": "224f8286892d30b318805188a83da39a0f7014a6b5a76819a21f9546d58bce90"
+    },
+    {
+      "path": "Source/CircuitOverride.cs",
+      "sha256": "d3e03d1728b0a643441f900c0517ad7ee68960e05c58de74eddac76a2010e0b2"
+    },
+    {
+      "path": "Source/CrossingDefinition.cs",
+      "sha256": "90a82ee2d29d087b18b948d88b79aec69b95fc8d6f07ecf270f0752bd627869e"
+    },
+    {
+      "path": "Source/GateConfirmation.cs",
+      "sha256": "60ad787bc4765d9d8d6b706e65b455f9cfad575f9cc9ec45134e119fbcbe462f"
+    },
+    {
+      "path": "Source/ManualControl.cs",
+      "sha256": "97d2b7ced59491372cc05c5e2eb5f38037c814b0fd8c79d0a82a90f29cc343a5"
+    },
+    {
+      "path": "Source/Mod.cs",
+      "sha256": "5e0a4cc2abef6bbb77fab5e324d46c7a140bbcff0a949ff6036b3927a206b4f5"
+    },
+    {
+      "path": "Source/RemoteGateProgress.cs",
+      "sha256": "fb7058d72e3ee978136a245b5adec445f11a2ebc96be6f595a5146565646c5a9"
+    },
+    {
+      "path": "Source/Tests/ManualPatchTests.cs",
+      "sha256": "45b4d8eb939acf4f3954154124d7c910b866f99498a0e8b7a9b7ddaac80502a5"
+    },
+    {
+      "path": "Source/Tests/Program.cs",
+      "sha256": "0b26cfa904c0979930b5967582dd0d83c59ee5d1695a8988cdca179d0e30db7b"
+    },
+    {
+      "path": "Source/Tests/Tests.csproj",
+      "sha256": "b7bb7103bffd6e07aa702d3c6810e30e6e51afd8b4351a3567f863464f470dff"
+    },
+    {
+      "path": "lib/0Harmony.dll",
+      "sha256": "339c3f53f0873b2385638fe15743e1a8e04123d5d93b063d8118c59cf16bbec8"
+    },
+    {
+      "path": "release/BrysonCrossingLamp.dll",
+      "sha256": "919d8398f3299de2a70fb3331ccfe1e392141733ecf3209cc5e8bfed099fd7b1"
+    },
+    {
+      "path": "settings.json",
+      "sha256": "6786570707cbf6171a93d0bc5a5582dead1c348673c095d63c7f4d60cfc94dde"
+    }
+  ]
+}

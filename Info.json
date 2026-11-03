@@ -1,0 +1,16 @@
+{
+  "identifier": "joshi/bryson-crossing-lamp",
+  "version": "0.3.1",
+  "name": "CTCCrossing",
+  "author": "Joshi1337",
+  "description": "Crossing lamps for Bryson, Governors Island, Sylva and Andrews on the original 3D CTC panel: blinking while closing, steady red when closed. AUTO/CLOSE switches for host/single player; F8 diagnostics.",
+  "scope": "optional",
+  "assemblies": [
+    "BrysonCrossingLamp.dll"
+  ],
+  "dependencies": {
+    "required": [
+      "rr/game >=0.6.1"
+    ]
+  }
+}

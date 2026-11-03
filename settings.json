@@ -1,0 +1,9 @@
+{
+  "crossingHierarchy": "",
+  "maxCrossingDistanceMetres": 600.0,
+  "offsetRightMetres": 0.0,
+  "offsetUpMetres": 0.03,
+  "offsetForwardMetres": 0.0,
+  "showLabel": true,
+  "labelYawDegrees": 180.0
+}
