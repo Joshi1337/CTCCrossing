@@ -87,3 +87,4 @@ if (!remote.Closed) throw new Exception("Continues from last visible state");
 remote.Update(true, 1f, 0f, null);
 if (remote.Available || remote.Closed) throw new Exception("Invalid duration");
 Console.WriteLine("PASS remote travel, opening, reversal, pause, visual resync and invalid metadata");
+MultiplayerControlTests.Run();

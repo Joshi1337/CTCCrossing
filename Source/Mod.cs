@@ -29,6 +29,14 @@ namespace BrysonCrossingLamp
         public void OnWorldLoad()
         {
             Stop();
+            string customHierarchy = null;
+            try
+            {
+                string settingsPath = Path.Combine(context.ModDirectory, "settings.json");
+                if (File.Exists(settingsPath)) customHierarchy = JsonUtility.FromJson<Settings>(File.ReadAllText(settingsPath))?.crossingHierarchy;
+            }
+            catch (Exception ex) { context.Log.Error(ex, "Cannot read crossing control mapping; using defaults."); }
+            ManualControl.BeginWorld(customHierarchy);
             runner = new GameObject("BrysonCrossingLamp.Runtime");
             Object.DontDestroyOnLoad(runner);
             var indicators = new List<LampRuntime>();
@@ -299,8 +307,7 @@ namespace BrysonCrossingLamp
         public TooltipInfo SwitchTooltip => new TooltipInfo(definition.Name + " Crossing - " +
             (ManualControl.IsClosed(crossing) ? "CLOSE" : "AUTO"),
             !ManualControl.Available ? "Manual control unavailable. See Player.log." :
-            !Game.State.StateManager.IsHost ? "Host control only." :
-            !ManualControl.CanControl(crossing) ? "Waiting for crossing controller." :
+            !ManualControl.CanControl(crossing) ? "Control unavailable: waiting for crossing or player permission." :
             ManualControl.IsClosed(crossing) ? "Click: return to AUTO (train detection)." :
                 "Click: CLOSE and hold gates closed.");
 
@@ -322,7 +329,7 @@ namespace BrysonCrossingLamp
             root.transform.rotation = stationHeading.rotation;
             Vector3 parentScale = lampRoot.transform.lossyScale;
             root.transform.localScale = new Vector3(1f / parentScale.x, 1f / parentScale.y, 1f / parentScale.z);
-            root.transform.position = lampRoot.transform.position + stationHeading.right * 0.040f
+            root.transform.position = lampRoot.transform.position + stationHeading.right * 0.027f
                 - stationHeading.forward * 0.004f;
             // Use the native clickable CTC controls' layer where available.
             var nativeKnob = panel.GetComponentInChildren<CTCPanelKnob>(true);

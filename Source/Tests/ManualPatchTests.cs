@@ -20,7 +20,7 @@ public static class ManualPatchTests
         [MethodImpl(MethodImplOptions.NoInlining)]
         public int Evaluate() => (int)UpdateCircuit(0);
     }
-    public static bool Forced(FakeCrossing crossing) => crossing.Host && crossing.Hold;
+    public static bool Forced(FakeCrossing crossing) => crossing.Hold;
     public static IEnumerable<CodeInstruction> Transpile(IEnumerable<CodeInstruction> code, ILGenerator generator) =>
         CircuitOverride.Inject(code, generator, typeof(ManualPatchTests).GetMethod(nameof(Forced)), 2);
     public static void Run()
@@ -44,7 +44,7 @@ public static class ManualPatchTests
             a.Detected = 0;
             Check(a.Evaluate() == 0, "Returning AUTO opens after crossing clears");
             a.Hold = true; a.Host = false;
-            Check(a.Evaluate() == 0, "Client cannot override host control");
+            Check(a.Evaluate() == 2, "Client applies synchronized CLOSE to its local circuit too");
         }
         finally { harmony.Unpatch(method, HarmonyPatchType.All, harmony.Id); }
         var restored = new FakeCrossing { Hold = true };

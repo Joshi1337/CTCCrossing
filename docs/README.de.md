@@ -27,7 +27,11 @@ Voraussetzung ist Railroader Experimental mit erlaubten DLL-Mods. Gebaut gegen 0
 
 Die Fernstellung ist eine Berechnung aus Spielbefehl, Cliplänge und Animationsgeschwindigkeit, kein unabhängiger Endlagensensor. F8 kennzeichnet diese Rückmeldung. Eine dunkle Lampe garantiert nicht, dass der Übergang offen ist.
 
-Bedienung vorerst nur im Einzelspiel bzw. durch den Host. CLOSE wird nicht gespeichert; nach dem Laden beginnen alle Schalter auf AUTO. Die Zuordnung gilt für die vier Übergänge der Basiskarte. Multiplayer ist nicht vollständig im Spiel geprüft.
+Ab Version 0.4.0 können auch Mitspieler (ab Passenger-Berechtigung) AUTO/CLOSE bedienen. **Host und alle Mitspieler, die das Pult nutzen, müssen die neue Mod installiert und aktiviert haben**, möglichst dieselbe Version. Die Übergangszuordnung in settings.json muss übereinstimmen.
+
+Die Schalterstellungen werden über die normale Spiel-Synchronisierung übertragen. Später beitretende Spieler übernehmen die aktuelle Stellung; beim erneuten Laden eines Spielstands durch den Host starten alle Schalter auf AUTO. Netzwerklatenz kann Änderungen verzögern. Spieler ohne Mod erhalten keine zusätzlichen Pultschalter. Die Mod während einer Multiplayer-Sitzung nicht einzeln entladen.
+
+Die Zuordnung gilt für die vier Übergänge der Basiskarte. Automatisierte Tests prüfen die Steuerung mit einer simulierten Transportschnittstelle. Ein echter Steam-Test mit zwei Spielern steht noch aus: CLOSE/AUTO vom Mitspieler bedienen, Stellung beim Host prüfen und einen weiteren Spieler bei aktivem CLOSE beitreten lassen.
 
 ## Updates veröffentlichen
 

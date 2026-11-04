@@ -47,13 +47,14 @@ The internal ID `joshi/bryson-crossing-lamp` and DLL name are deliberately retai
 
 **Distant steady-red indication is calculated, not an independent end-position sensor.** When the animation is disabled, the mod tracks the game's gate command using clip length and animation speed. Visible animation feedback corrects the estimate when available. F8 identifies calculated remote indication. Missing controllers or invalid travel metadata still leave the lamp off; **off is not proof that a crossing is open**.
 
-- Operator switches work in single player or on the **multiplayer host**. Clients cannot issue commands. Manual switch positions are not synchronized to clients.
-- Manual CLOSE selections are **not saved**. Loading a world starts the switches on AUTO; unloading the mod returns control to the game.
+- Operator switches work for the host and multiplayer clients, including players with Passenger access. **Install and enable CTCCrossing 0.4.0 or newer on the host and every player who uses the panel**, preferably the same version. Keep crossing mapping settings consistent across players.
+- AUTO/CLOSE uses the game's authorized property-change messages and world snapshot. Switch positions are synchronized; joining an existing session retains its current positions. Network latency can delay updates. Players without the mod do not receive the added panel controls.
+- Loading a saved world as host resets all switches to AUTO. Joining an already running world does not reset them. Unloading the mod removes its local circuit override; do not hot-unload it during multiplayer play.
 - Indicators respond to the gate-closing command, not the earlier roadside warning-light phase.
 - Mapping is specific to four known objects in the base map. Map replacements or game updates can break it.
 - This remains a prototype. Multiplayer and every combination of train movement, streaming and other mods have not been tested in game.
 
-The Bryson indicator, flashing and clearing were tested in game during development. Further visual, control and remote-state refinements have automated tests, but that does not replace in-game validation on your installation.
+The Bryson indicator, flashing and clearing were tested in game during development. Multiplayer control has automated tests with an in-memory game transport boundary; a live two-player Steam session has not yet been verified. Test client CLOSE/AUTO, host feedback and a late join before relying on it.
 
 ## Configuration and troubleshooting
 
