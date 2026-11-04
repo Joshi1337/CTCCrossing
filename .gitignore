@@ -14,3 +14,7 @@ GameManaged/
 .env
 .env.*
 
+# Personal local publishing launcher
+/Update-pushen.bat
+/scripts/Publish-Interactive.ps1
+
